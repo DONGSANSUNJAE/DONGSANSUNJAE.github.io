@@ -1,0 +1,92 @@
+---
+layout: default
+---
+
+<style>
+  .no-margin {
+    margin: 0;
+    white-space: nowrap;
+  }
+</style>
+
+<!-- ========== About ========== -->
+<div class="docs-section" id="about">
+  <h5>About</h5>
+  Hello! I am an undergraduate student in the Department of
+  <b><a href="https://ee.yonsei.ac.kr/ee_en/index.do">Electrical and Electronic Engineering</a></b>
+  at <b><a href="https://www.yonsei.ac.kr/en_sc/">Yonsei University</a></b>.
+  <br>
+  <br>
+  My interests include <b>embedded systems</b>, <b>signal processing</b>, and systems at the
+  intersection of <b>hardware and software</b>.
+  <br>
+  <br>
+  I am always open to collaboration and discussion. If you are interested in similar topics,
+  please feel free to reach out!
+</div>
+
+<!-- ========== News ========== -->
+<div class="docs-section">
+  <h5>News</h5>
+  <div class="row no-gutters">
+    <div class="col-12 col-md-12 text-md-left">
+      <b class="bbold" style="color:#fa8072;">July 2026</b>&nbsp;&nbsp;&nbsp;&nbsp;
+      Launched my personal academic website!
+    </div>
+  </div>
+</div>
+<p></p>
+
+<!-- ========== Education ========== -->
+<div class="docs-section" id="education">
+  <h5>Education</h5>
+  <div class="paper">
+    <p class="title"><b>Yonsei University<b style="float:right;">2022 - Present</b></b></p>
+    <p>B.S. in Electrical and Electronic Engineering</p>
+    <p></p>
+  </div>
+</div>
+
+<!-- ========== PUBLICATIONS ========== -->
+<div class="docs-section" id="publications">
+  <h5>Publications</h5>
+  <p>Publications will be listed here.</p>
+</div>
+
+<!-- ========== EXPERIENCE ========== -->
+<div class="docs-section" id="experience">
+  <h4>Vitæ</h4>
+
+  <p>
+    {% if site.data.main_info.cv and site.data.main_info.cv != "" %}
+    Full CV in <a href="{{ site.baseurl }}/{{ site.data.main_info.cv }}">PDF</a>.
+    {% endif %}
+  </p>
+
+  <ul class="cbp_tmtimeline">
+    {% for exp in site.data.experience.experiences %}
+    <li>
+      {% if exp.category == "work" %}
+      <div class="cbp_tmicon cbp_tmicon-work"></div>
+      {% else %}
+      <div class="cbp_tmicon cbp_tmicon-education"></div>
+      {% endif %}
+      <div class="cbp_tmlabel">
+        <h3><b>{{ exp.place }}</b> <span style="float:right;">{{ exp.time }}</span></h3>
+        <h4>{{ exp.title }}</h4>
+        {% if exp.subtitle and exp.subtitle != "" %}
+        <p>{{ exp.subtitle }}</p>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <br>
+  <p style="text-align:center; color:#888; font-size:0.9rem;">
+    Jekyll theme adapted from
+    <a href="https://seungonekim.github.io/">Seungone Kim's website</a>,
+    <a href="https://junmokang.github.io/">Junmo Kang's website</a>, and
+    <a href="https://joeljang.github.io/">Joel Jang's website</a>.
+  </p>
+</div>
