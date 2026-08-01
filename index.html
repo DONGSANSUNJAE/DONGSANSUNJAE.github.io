@@ -70,20 +70,22 @@ layout: default
     {% endif %}
   </p>
 
-  <ul class="cbp_tmtimeline">
-    {% for exp in site.data.experience.experiences %}
+  <!-- The Timeline -->
+  <ul class="timeline">
+    {% assign work_experiences = site.data.experience.experiences | where: "category", "work" %}
+    {% for exp in work_experiences %}
     <li>
-      {% if exp.category == "work" %}
-      <div class="cbp_tmicon cbp_tmicon-work"></div>
+      {% assign index_modulo = forloop.index0 | modulo: 2 %}
+      {% if index_modulo == 0 %}
+      <div class="direction-r">
       {% else %}
-      <div class="cbp_tmicon cbp_tmicon-education"></div>
+      <div class="direction-l">
       {% endif %}
-      <div class="cbp_tmlabel">
-        <h3><b>{{ exp.place }}</b> <span style="float:right;">{{ exp.time }}</span></h3>
-        <h4>{{ exp.title }}</h4>
-        {% if exp.subtitle and exp.subtitle != "" %}
-        <p>{{ exp.subtitle }}</p>
-        {% endif %}
+        <div class="flag-wrapper">
+          <span class="flag">{{ exp.place }}</span>
+          <span class="time-wrapper"><span class="time">{{ exp.time }}</span></span>
+        </div>
+        <div class="desc"><b>{{ exp.title }}</b>{% if exp.subtitle and exp.subtitle != "" %} <br/> {{ exp.subtitle }}{% endif %}</div>
       </div>
     </li>
     {% endfor %}
