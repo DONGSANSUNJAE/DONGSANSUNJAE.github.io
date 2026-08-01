@@ -6,16 +6,16 @@ experiences:
   subtitle: "Department of Electrical and Electronic Engineering"
   category: "school"
 
-- place: "MAI Lab @ Yonsei University"
+- place: "Yonsei University"
   time: "Dec. 2025 - Present"
   title: "Researcher"
   subtitle: "Medical AI Researcher at Yonsei University (MAI Lab)."
   category: "work"
 
-- place: "BMI Lab @ Seoul National University Hospital (SNUH)"
+- place: "Seoul National University Hospital (SNUH)"
   time: "Mar. 2025 - Feb. 2026"
   title: "Researcher"
-  subtitle: "ML/DL Researcher using 12-lead ECG, 24-hour Holter, and EHR data at Seoul National University Hospital (BMI Lab)."
+  subtitle: "Medical AI Researcher at Seoul National University Hospital (BMI Lab)."
   category: "work"
 
 - place: "Hanmi Pharmaceuticals"
