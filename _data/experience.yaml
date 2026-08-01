@@ -1,7 +1,13 @@
 experiences:
 
+- place: "Dongguk University"
+  time: "2020 - 2025"
+  title: "B.S. in Statistics(summa cum laude)"
+  subtitle: "Department of Electrical and Electronic Engineering"
+  category: "school"
+
 - place: "Yonsei University"
-  time: "2022 - Present"
-  title: "B.S. in Electrical and Electronic Engineering"
+  time: "2026 - Present"
+  title: "M.S. in Electrical and Electronic Engineering"
   subtitle: "Department of Electrical and Electronic Engineering"
   category: "school"
