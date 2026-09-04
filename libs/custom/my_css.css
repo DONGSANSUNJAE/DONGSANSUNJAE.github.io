@@ -38,8 +38,32 @@ h4 {
   padding: 4rem 0;
   margin-bottom: 0;}
 
+.vitae-timeline {
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 26px; }
+.vitae-timeline:before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 4px;
+  width: 2px;
+  background: #eee; }
 .vitae-item {
-  margin-bottom: 1.6rem; }
+  position: relative;
+  margin-bottom: 1.8rem; }
+.vitae-item:last-child {
+  margin-bottom: 0; }
+.vitae-marker {
+  position: absolute;
+  left: -26px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #fa8072; }
 .vitae-item .title {
   margin-bottom: 2px;
   overflow: hidden; }

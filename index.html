@@ -95,19 +95,22 @@ layout: default
   <p>Full CV in <a href="{{ site.baseurl }}/{{ site.data.main_info.cv }}">PDF</a>.</p>
   {% endif %}
 
-  {% assign work_experiences = site.data.experience.experiences | where: "category", "work" %}
-  {% for exp in work_experiences %}
-  <div class="vitae-item">
-    <p class="title">
-      <b>{{ exp.place }}</b>
-      <span class="vitae-time">{{ exp.time }}</span>
-    </p>
-    <p class="vitae-role">{{ exp.title }}</p>
-    {% if exp.subtitle and exp.subtitle != "" %}
-    <p class="vitae-desc">{{ exp.subtitle }}</p>
-    {% endif %}
+  <div class="vitae-timeline">
+    {% assign work_experiences = site.data.experience.experiences | where: "category", "work" %}
+    {% for exp in work_experiences %}
+    <div class="vitae-item">
+      <span class="vitae-marker"></span>
+      <p class="title">
+        <b>{{ exp.place }}</b>
+        <span class="vitae-time">{{ exp.time }}</span>
+      </p>
+      <p class="vitae-role">{{ exp.title }}</p>
+      {% if exp.subtitle and exp.subtitle != "" %}
+      <p class="vitae-desc">{{ exp.subtitle }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 
   <p class="theme-credit">
     Jekyll theme adapted from
