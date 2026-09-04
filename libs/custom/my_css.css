@@ -65,14 +65,17 @@ h4 {
   background: #fff;
   border: 2px solid #fa8072; }
 .vitae-item .title {
-  margin-bottom: 2px;
-  overflow: hidden; }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  column-gap: 12px;
+  row-gap: 2px;
+  margin-bottom: 2px; }
 .vitae-time {
-  float: right;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.55);
-  white-space: nowrap;
-  margin-left: 12px; }
+  white-space: nowrap; }
 .vitae-role {
   margin-bottom: 2px;
   font-weight: 600; }
