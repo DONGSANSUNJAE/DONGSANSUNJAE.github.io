@@ -46,16 +46,20 @@ layout: default
 <!-- ========== Education ========== -->
 <div class="docs-section" id="education">
   <h5>Education</h5>
-  <div class="paper">
-    <p class="title"><b>Yonsei University<b style="float:right;">2026 - Present</b></b></p>
-    <p>M.S. in Electrical and Electronic Engineering</p>
-    <p></p>
+  <div class="vitae-item">
+    <p class="title">
+      <b>Yonsei University</b>
+      <span class="vitae-time">2026 - Present</span>
+    </p>
+    <p class="vitae-role">M.S. in Electrical and Electronic Engineering</p>
   </div>
 
-  <div class="paper">
-    <p class="title"><b>Dongguk University<b style="float:right;">2020 - 2025</b></b></p>
-    <p>B.S. in Statistics (summa cum laude)</p>
-    <p></p>
+  <div class="vitae-item">
+    <p class="title">
+      <b>Dongguk University</b>
+      <span class="vitae-time">2020 - 2025</span>
+    </p>
+    <p class="vitae-role">B.S. in Statistics (summa cum laude)</p>
   </div>
 </div>
 
@@ -86,37 +90,26 @@ layout: default
 
 <!-- ========== EXPERIENCE ========== -->
 <div class="docs-section" id="experience">
-  <h4>Vitæ</h4>
+  <h5>Vitæ</h5>
+  {% if site.data.main_info.cv and site.data.main_info.cv != "" %}
+  <p>Full CV in <a href="{{ site.baseurl }}/{{ site.data.main_info.cv }}">PDF</a>.</p>
+  {% endif %}
 
-  <p>
-    {% if site.data.main_info.cv and site.data.main_info.cv != "" %}
-    Full CV in <a href="{{ site.baseurl }}/{{ site.data.main_info.cv }}">PDF</a>.
+  {% assign work_experiences = site.data.experience.experiences | where: "category", "work" %}
+  {% for exp in work_experiences %}
+  <div class="vitae-item">
+    <p class="title">
+      <b>{{ exp.place }}</b>
+      <span class="vitae-time">{{ exp.time }}</span>
+    </p>
+    <p class="vitae-role">{{ exp.title }}</p>
+    {% if exp.subtitle and exp.subtitle != "" %}
+    <p class="vitae-desc">{{ exp.subtitle }}</p>
     {% endif %}
-  </p>
+  </div>
+  {% endfor %}
 
-  <!-- The Timeline -->
-  <ul class="timeline">
-    {% assign work_experiences = site.data.experience.experiences | where: "category", "work" %}
-    {% for exp in work_experiences %}
-    <li>
-      {% assign index_modulo = forloop.index0 | modulo: 2 %}
-      {% if index_modulo == 0 %}
-      <div class="direction-r">
-      {% else %}
-      <div class="direction-l">
-      {% endif %}
-        <div class="flag-wrapper">
-          <span class="flag">{{ exp.place }}</span>
-          <span class="time-wrapper"><span class="time">{{ exp.time }}</span></span>
-        </div>
-        <div class="desc"><b>{{ exp.title }}</b>{% if exp.subtitle and exp.subtitle != "" %} <br/> {{ exp.subtitle }}{% endif %}</div>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-
-  <br>
-  <p style="text-align:center; color:#888; font-size:0.9rem;">
+  <p class="theme-credit">
     Jekyll theme adapted from
     <a href="https://seungonekim.github.io/">Seungone Kim's website</a>,
     <a href="https://junmokang.github.io/">Junmo Kang's website</a>, and
