@@ -101,6 +101,22 @@ layout: default
   </div>
 </div>
 
+<!-- ========== AWARDS ========== -->
+<div class="docs-section" id="awards">
+  <h5>Awards</h5>
+
+  {% for a in site.data.awards.awards %}
+  <div class="vitae-item">
+    <p class="title">
+      <b>{{ a.award }}</b>
+      <span class="vitae-time">{{ a.date }}</span>
+    </p>
+    <p class="vitae-role">{{ a.issuer }}</p>
+    <p class="vitae-desc">{{ a.event }}</p>
+  </div>
+  {% endfor %}
+</div>
+
 <!-- ========== EXPERIENCE ========== -->
 <div class="docs-section" id="experience">
   <h5>Vitæ</h5>
